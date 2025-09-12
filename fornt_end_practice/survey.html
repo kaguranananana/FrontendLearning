@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>调查问卷</title>
+  <style>
+    /* 基础的样式设置 */
+    body {
+	/*字体栈*/
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #4CAF50;
+      padding-bottom: 10px;
+    }
+    
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #555;
+    }
+    
+    input[type="text"], 
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+    
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+    
+    /* 单选按钮和复选框的样式 */
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 8px;
+      margin-top: 10px;
+    }
+    
+    input[type="radio"] + label,
+    input[type="checkbox"] + label {
+      display: inline;
+      margin-right: 20px;
+      margin-top: 0;
+      font-weight: normal;
+      cursor: pointer;
+    }
+    
+    /* 按钮样式 */
+    .button-group {
+      text-align: center;
+      margin-top: 30px;
+    }
+    
+    button {
+      margin: 10px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+    
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    
+    button[type="reset"] {
+      background-color: #f44336;
+      color: white;
+    }
+    
+    button[type="reset"]:hover {
+      background-color: #da190b;
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      form {
+        margin: 10px;
+        padding: 20px;
+      }
+      
+      input[type="radio"] + label,
+      input[type="checkbox"] + label {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <h1>调查问卷</h1>
+
+    <!-- 姓名输入框 -->
+    <label for="name">姓名：</label>
+    <input type="text" id="name" name="name" placeholder="请输入您的姓名">
+
+    <!-- 年龄输入框 -->
+    <label for="age">年龄：</label>
+    <input type="number" id="age" name="age" placeholder="请输入您的年龄">
+
+    <!-- 性别选择（单选按钮） -->
+    <label>性别：</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">男</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">女</label>
+
+    <!-- 兴趣选择（复选框） -->
+    <label>兴趣爱好：</label>
+    <input type="checkbox" id="sports" name="hobby" value="sports">
+    <label for="sports">运动</label>
+    <input type="checkbox" id="reading" name="hobby" value="reading">
+    <label for="reading">阅读</label>
+    <input type="checkbox" id="music" name="hobby" value="music">
+    <label for="music">音乐</label>
+    <input type="checkbox" id="travel" name="hobby" value="travel">
+    <label for="travel">旅行</label>
+
+    <!-- 教育程度（下拉选择框） -->
+    <label for="education">教育程度：</label>
+    <select id="education" name="education">
+      <option value="">请选择</option>
+      <option value="high_school">高中</option>
+      <option value="bachelor">本科</option>
+      <option value="master">硕士</option>
+      <option value="doctor">博士</option>
+    </select>
+
+    <!-- 职业（下拉选择框） -->
+    <label for="occupation">职业：</label>
+    <select id="occupation" name="occupation">
+      <option value="">请选择</option>
+      <option value="student">学生</option>
+      <option value="teacher">教师</option>
+      <option value="engineer">工程师</option>
+      <option value="doctor">医生</option>
+      <option value="other">其他</option>
+    </select>
+
+    <!-- 月收入（单选按钮） -->
+    <label>月收入：</label>
+    <input type="radio" id="income1" name="income" value="below_3000">
+    <label for="income1">3000元以下</label>
+    <input type="radio" id="income2" name="income" value="3000_8000">
+    <label for="income2">3000-8000元</label>
+    <input type="radio" id="income3" name="income" value="8000_15000">
+    <label for="income3">8000-15000元</label>
+    <input type="radio" id="income4" name="income" value="above_15000">
+    <label for="income4">15000元以上</label>
+
+    <!-- 意见或建议（文本域） -->
+    <label for="feedback">意见或建议：</label>
+    <textarea id="feedback" name="feedback" rows="4" placeholder="请输入您的意见或建议"></textarea>
+
+    <!-- 按钮组 -->
+    <div class="button-group">
+      <button type="submit">提交问卷</button>
+      <button type="reset">重置表单</button>
+    </div>
+  </form>
+
+  <script>
+    // 表单验证和提交处理
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault(); // 阻止默认提交行为
+      
+      // 获取表单数据
+      const formData = new FormData(this);
+      const data = {};
+      
+      // 基本验证
+      const name = formData.get('name');
+      const age = formData.get('age');
+      const gender = formData.get('gender');
+      
+      if (!name || name.trim() === '') {
+        alert('请输入您的姓名！');
+        return;
+      }
+      
+      if (!age || age < 1 || age > 120) {
+        alert('请输入有效的年龄（1-120岁）！');
+        return;
+      }
+      
+      if (!gender) {
+        alert('请选择您的性别！');
+        return;
+      }
+      
+      // 收集所有表单数据
+      for (let [key, value] of formData.entries()) {
+        if (data[key]) {
+          // 处理多选项（如兴趣爱好）
+          if (Array.isArray(data[key])) {
+            data[key].push(value);
+          } else {
+            data[key] = [data[key], value];
+          }
+        } else {
+          data[key] = value;
+        }
+      }
+      
+      // 显示提交的数据
+      let result = '=== 调查问卷提交成功 ===\n\n';
+      result += `姓名：${data.name}\n`;
+      result += `年龄：${data.age}岁\n`;
+      result += `性别：${data.gender === 'male' ? '男' : '女'}\n`;
+      
+      if (data.hobby) {
+        const hobbies = Array.isArray(data.hobby) ? data.hobby : [data.hobby];
+        const hobbyNames = hobbies.map(h => {
+          switch(h) {
+            case 'sports': return '运动';
+            case 'reading': return '阅读';
+            case 'music': return '音乐';
+            case 'travel': return '旅行';
+            default: return h;
+          }
+        });
+        result += `兴趣爱好：${hobbyNames.join('、')}\n`;
+      }
+      
+      if (data.education) {
+        const educationMap = {
+          'high_school': '高中',
+          'bachelor': '本科',
+          'master': '硕士',
+          'doctor': '博士'
+        };
+        result += `教育程度：${educationMap[data.education] || data.education}\n`;
+      }
+      
+      if (data.occupation) {
+        const occupationMap = {
+          'student': '学生',
+          'teacher': '教师',
+          'engineer': '工程师',
+          'doctor': '医生',
+          'other': '其他'
+        };
+        result += `职业：${occupationMap[data.occupation] || data.occupation}\n`;
+      }
+      
+      if (data.income) {
+        const incomeMap = {
+          'below_3000': '3000元以下',
+          '3000_8000': '3000-8000元',
+          '8000_15000': '8000-15000元',
+          'above_15000': '15000元以上'
+        };
+        result += `月收入：${incomeMap[data.income] || data.income}\n`;
+      }
+      
+      if (data.feedback && data.feedback.trim()) {
+        result += `意见建议：${data.feedback}\n`;
+      }
+      
+      alert(result);
+      console.log('表单数据：', data);
+    });
+    
+    // 重置表单确认
+    document.querySelector('button[type="reset"]').addEventListener('click', function(e) {
+      if (!confirm('确定要重置表单吗？所有输入的数据将被清空。')) {
+        e.preventDefault();
+      }
+    });
+    
+    // 实时年龄验证
+    document.getElementById('age').addEventListener('input', function() {
+      const age = parseInt(this.value);
+      if (age < 1 || age > 120) {
+        this.style.borderColor = '#f44336';
+      } else {
+        this.style.borderColor = '#4CAF50';
+      }
+    });
+  </script>
+
+</body>
+</html>

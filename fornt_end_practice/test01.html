@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form>
+		<label for="age">请输入你的年龄:</label>
+		<input type="number" id="age" name="age">
+		<br>
+		<label for="maritalStatus">婚姻状况:</label>
+		<input type="checkbox" id="maritalStatus" name="maritalStatus">
+		<br>
+		<button type="button" onclick="processForm()">提交</button>
+	</form>
+	<p id="message"></p>
+	<script>
+		function processForm() {
+		// 获取用户输入的年龄
+		let age = document.getElementById('age').value;
+
+		// 将年龄转换为数字以便进行判断
+		age = parseInt(age);
+
+		// 根据年龄禁用或启用婚姻状况复选框
+		if (age < 18) {
+			document.getElementById('maritalStatus').disabled = true;
+			document.getElementById('message').innerText = '你未成年，婚姻状况选项已禁用。';
+		} else {
+			document.getElementById('maritalStatus').disabled = false;
+			document.getElementById('message').innerText = '你已成年，可以选择婚姻状况。';
+		}
+		}
+	</script>
+</body>
+</html>
