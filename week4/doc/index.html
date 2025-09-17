@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue CDN Example</title>
+  <!-- 引入Vue的CDN链接 -->
+  <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+  </div>
+
+  <script>
+    // 使用Vue创建应用
+    const app = Vue.createApp({
+      data() {
+        return {
+          message: 'Hello, Vue!'
+        }
+      }
+    })
+    // 挂载Vue应用到页面的#app元素
+    app.mount('#app')
+  </script>
+</body>
+</html>
