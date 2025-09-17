@@ -40,8 +40,7 @@
           </div>
         </div>
 
-        <!--换算按扭关联 --> 
-        <button @click="convertTemperature" class="convert-button">换算</button>
+        
         <!-- 当errorMessage不为空的时候，显示这个p标签-->
          <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
 
@@ -51,7 +50,7 @@
       <div class="result-section">
           <h2>换算结果</h2>
           <!-- 显示resuly数据-->
-          <p class="result-display">{{ result }}</p>
+          <p class="result-display">{{ computedResult }}</p>
       </div>
 
     </main>
@@ -63,6 +62,8 @@
 
 
 <script>
+import { computed } from 'vue';
+
 export default {
   data() {
     return { 
@@ -81,11 +82,11 @@ export default {
       this.toUnit = 'fahrenheit';
       this.result = '-';
       this.errorMessage = '';
-    },
-
-    // 换算功能函数
-    convertTemperature() {
-      // 输入校验
+    }
+  },
+  computed : {
+      computedResult() {
+        // 输入校验
       if (this.inputValue === '' || isNaN(this.inputValue)) {
         this.errorMessage = '请输入有效数字';
         this.result = '-';
@@ -133,15 +134,11 @@ export default {
       }
 
       // 更新结果保留两位小数
-      this.result = finalResult.toFixed(2);
-
-
+      return finalResult.toFixed(2);
+      }
 
 
     }
-
-
-  }
 }
 
 </script>
@@ -255,6 +252,3 @@ export default {
   margin-top: 20px;
 }
 </style>
-
-
-1111
