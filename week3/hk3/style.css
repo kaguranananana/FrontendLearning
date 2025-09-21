@@ -1,0 +1,60 @@
+body {
+	background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+	transition: all 2s ease-in-out; /* 使用 all 属性，延长到2秒 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	font-family: sans-serif;
+	
+}
+
+.card {
+	background-color: rgba(255, 255, 255, 0.25);
+	backdrop-filter: blur(10px);
+	border-radius: 20px;
+	width: 400px;
+	padding: 20px 40px;	
+	text-align: center;
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+
+}
+
+#count-display {
+	font-size: 80px;
+	font-weight: 600;
+	margin: 20px 0;
+	color: white;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+	user-select: none;
+}
+
+.button-container {
+	display: flex;
+	gap: 20px; /*按扭之间的距离*/
+	justify-content: center;
+}
+
+.btn {
+	background-color: rgba(255, 255, 255, 0.25);
+	color: white;
+	border-radius: 12px;
+	width: 80px;
+	padding:12px 20px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	cursor: pointer;
+	user-select: none;
+	font-weight: 500;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+	background-color: rgba(255, 255, 255, 0.45);
+	transform: scale(1.05);
+}
+
+.btn:active {
+	transform: scale(0.98);
+}
